@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>BMI Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-aquiv="X-UA-compatible" content="IE=edge">
+    <style>
+        body{
+            background: rgb(25, 155, 155);
+            font-family: sans-serif;
+            overflow: hidden;
+            outline: none;
+        }
+        h1{
+            text-align: center;
+            
+        }
+        .container{
+            display: grid;
+            grid-template-areas: 
+            'head head'
+            'head head';
+            padding: 150px 450px;
+        }
+    
+        form{
+            grid-area: head;
+        }
+        label{
+            font-size: 22px;
+            font-weight: bold;
+        }
+        input{
+            background: transparent;
+            outline: none;
+            border: 2px solid rgb(153, 56, 56);
+            border-radius: 25px;
+            padding: 10px;
+            color: black;
+        }
+        button{
+            background: transparent;
+            border-radius: 25px;
+            border: 2px solid rgb(153, 56, 56);
+            padding: 10px 25px;
+            cursor: pointer;
+            outline: none;
+        }
+        button:hover{
+            background: rgb(153, 56, 56);
+            border-radius: 25px;
+            border: 2px solid rgb(153, 56, 56);
+            padding: 10px 25px;
+            cursor: pointer;
+            outline: none;
+            transition: 0.7s;
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <form action="" onsubmit="return false">
+                <h1>BMI Calculator</h1>
+                <label for="">Weight in KG</label>&nbsp;&nbsp;&nbsp;
+                <input id="weight" required placeholder="" type="number"><br><br>
+                <label for="">Height in FT</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="height" required placeholder="" type="number"><br><br>
+                <button onclick="bmiCal()" id="Check">Check BMI</button><br><br>
+                <input id="Bmi" placeholder="" type="text">
+            </form>   
+        </div>
+    <script>
+        function bmiCal()
+        {
+            var weight=document.getElementById('weight').value;
+            var height=document.getElementById('height').value;
+            height=height*12;
+            height=height*0.025;
+            var cal=weight/(height*height);
+            rcal=Math.round(cal);
+            document.getElementById('Bmi').value=rcal;
+
+        }
+    </script>
+    </body>
+</html>
